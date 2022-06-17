@@ -1,37 +1,179 @@
-## Welcome to GitHub Pages
+# Markdown 学习笔记
+学习参考链接：[Markdown官方教程](https://markdown.com.cn/ 'Markdown 官方教程')
+## 标题
+- 基本语法
+    ```
+    # 一级标题
+    ## 二级标题
+    ...
+    ###### 六级标题
+        
+    // X个星号代表X级标题
+    ```
+ - 可选  
+   下方使用任意数量 `==` 标识**一级**标题或任意数量 `--` 标识**二级**标题
+## 段落
+   ✅ 使用一或多个空白行分隔
 
-You can use the [editor on GitHub](https://github.com/freshsquid/freshsquid/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+   ❌ 不要使用空格或制表符缩进段落
+## 换行（段落内）
+   ✅行末两个或多个结尾空格 (*trailing whitespace*) <br>
+   ✅为了兼容性，可在行尾添加结尾空格或 HTML 的 `<br>` 标签来实现换行
+## 强调
+> 符号和内容之间没有空格
+###  粗体
+   ```
+   **Content** //前后两个星号
+    __Content__ //前后两个下划线,不能加粗中间内容。
+   ```
+   ❌  这样不能__加粗__。
+<br>
+### 斜体
+   ```
+   *Content* //前后一个星号
+   _Content_ //前后一个下划线,不能对中间内容设置斜体。
+   ```
+   ❌  这样不能_设置斜体_。
+<br>
+### 粗体和斜体
+   ```
+   ***Content*** // 可以对中间内容设置加粗和斜体
+   ___Content___
+   __*Content*__
+   **_Content_**
+   ```
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## 引用
+- 单段落：段落前使用`>`
+   ```
+   > Paragraph content
+   ```
+- 多段落：段落之间空白行添加一个`>`
+   ```
+   > Paragraph 1
+   >
+   > Paragraph 2
+   ```
+- 嵌套：嵌套内容前添加一个·>>`
+   ```
+   > Paragraph 1
+   >
+   >> Sub paragraph
+   ```
+- 嵌套其他元素
+   ```
+   > 可嵌套元素:
+   > - ul
+   > 1. ol
+   > *斜体*和**粗体**
+   > ###### 标题
+   > [链接](Markdown学习笔记.md)
+   > ```
+   > 代码块 code
+   > ```
+   ```
+## 列表
+### 有序列表
+- 数字英文句点空格内容
 ```
+1. 一 //只能使用英文句点
+2. 二
+3. 三
+```
+- 可不按数字顺序，但必须以数字1开始
+```
+1. 一
+3. 二
+5. 三
+```
+- 缩进可嵌套
+```
+1. 一
+   1. 一的1
+   2. 一的2
+2. 二
+```
+### 无序列表
+   ❌ 不要混合使用多种符号
+```
+- item 1
+- item 2
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+***
 
-### Jekyll Themes
+* item 1
+* item 2
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/freshsquid/freshsquid/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+***
 
-### Support or Contact
++ item 1
++ item 2
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+***
+
+嵌套
+- item 1
+   - item a under item 1
+```
+### 列表嵌套其他元素
+保留列表连续性并添加另一种元素，将该元素缩进四个空格或一个制表符
+```
+- item 1
+- item 2
+   段落
+   > 引用块
+
+      ```
+      代码块 (缩进8个空格或2个制表符)
+      ```
+   ![图片](https://miro.medium.com/max/1400/1*OohqW5DGh9CQS4hLY5FXzA.png 'hello word')
+   其他类型列表
+
+- item 3
+```
+## 代码
+- 基本语法：包裹单词或短语在反引号 (`) 中
+- 转义反引号：单词或短语包裹在双反引号(``)中
+- 围栏式代码块：在代码块之前和之后的行上使用三个反引号（(```）或三个波浪号（~~~）
+- 语法高亮
+   前反引号后指定一种语言，如```json
+## 分隔线
+单独一行上使用三个或多个星号 `***`、破折号 `---` 或下划线 `___`，最好在分隔行前后加空白行。
+## 链接
+- 超链接
+```
+[超链接显示名](超链接地址 "超链接title，可选，前后空格")
+```
+- 转换网址或邮件地址为可点击状态,可使用尖括号`<>`
+```
+<https://markdown.com.cn>
+```
+- 带格式的链接
+  ```
+  **[超链接显示名](超链接地址 "超链接title")** // 强调，在语法外加星号
+  ***
+  [`超链接显示名`](超链接地址 "超链接title") //代码，在反括号内加反引号
+  ```
+- 全局链
+```
+[Displayed Content][Label]
+或者加空格
+[Displayed Content] [Label]
+
+...
+
+[Label]: https://markdown.com.cn 'address'
+```
+> - 标签不区分大小写，可以包含字母，数字，空格或标点符号
+> - 链接的URL，可以选择将其括在尖括号中。
+> - 链接的可选标题，可以将其括在双引号，单引号或括号中
+> - 链接的第二部分放在Markdown文档中的任何位置
+## 图片
+- 普通图片
+```
+![图片alt](图片链接 "图片title")
+```
+- 图片增加链接
+```
+[![图片alt](图片链接 "图片title")](跳转链接)
+```
